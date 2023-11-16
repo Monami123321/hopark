@@ -4,5 +4,8 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssafy.hopark.model.dao.UserDao">
 
+	<select id="selectOne"></select>
+
+
 
 </mapper>
