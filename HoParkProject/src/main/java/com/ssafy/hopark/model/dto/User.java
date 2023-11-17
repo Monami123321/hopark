@@ -7,6 +7,8 @@ public class User {
 	private String location;
 	private String email;
 	private int age;
+	private String img;
+	private String orgImg;
 	private String work1;
 	private String work2;
 	private String work3;
@@ -17,8 +19,8 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String id, String password, String name, String location, String email, int age, String work1,
-			String work2, String work3, String work4) {
+	public User(String id, String password, String name, String location, String email, int age, String img,
+			String orgImg, String work1, String work2, String work3, String work4) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -26,6 +28,8 @@ public class User {
 		this.location = location;
 		this.email = email;
 		this.age = age;
+		this.img = img;
+		this.orgImg = orgImg;
 		this.work1 = work1;
 		this.work2 = work2;
 		this.work3 = work3;
@@ -80,6 +84,22 @@ public class User {
 		this.age = age;
 	}
 
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public String getOrgImg() {
+		return orgImg;
+	}
+
+	public void setOrgImg(String orgImg) {
+		this.orgImg = orgImg;
+	}
+
 	public String getWork1() {
 		return work1;
 	}
@@ -115,8 +135,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", password=" + password + ", name=" + name + ", location=" + location + ", email="
-				+ email + ", age=" + age + ", work1=" + work1 + ", work2=" + work2 + ", work3=" + work3 + ", work4="
-				+ work4 + "]";
+				+ email + ", age=" + age + ", img=" + img + ", orgImg=" + orgImg + ", work1=" + work1 + ", work2="
+				+ work2 + ", work3=" + work3 + ", work4=" + work4 + "]";
 	}
 
 }

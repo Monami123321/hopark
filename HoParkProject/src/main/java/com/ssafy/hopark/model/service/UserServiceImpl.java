@@ -16,7 +16,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean login(User user) {
 		User selected = userDao.selectOne(user.getId());
-		if (selected == null || selected.getPassword() != user.getPassword()) {
+		//System.out.println(selected.toString());
+		if (selected == null || !selected.getPassword().equals(user.getPassword())) {
 			return false;
 		}
 		return true;

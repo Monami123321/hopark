@@ -3,6 +3,7 @@ package com.ssafy.hopark.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ public class UserController {
 	private static final String SUCCESS = "request successed";
 	private static final String FAIL = "request failed";
 
-	@PostMapping
+	@PostMapping("login")
 	public ResponseEntity<?> login(@RequestBody User user) {
 		boolean res = userService.login(user);
 		if (!res) {
