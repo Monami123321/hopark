@@ -10,6 +10,27 @@
 		WHERE id=#{id}
 		
 	</select>
+	
+	<insert id="insertOne" parameterType="User">
+		INSERT INTO user (id, password, name, location, email, age) 
+		VALUES (#{id}, #{password}, #{name}, #{location}, #{email}, #{age})
+	</insert>
+
+	<!-- SET password=#{password}, name=#{name}, location=#{location}, email=#{email}, age=#{age}, img=#{img}, org_img=#{orgImg}, work1=#{work1}, work2=#{work2}, work3=#{work3}, work4=#{work4} -->
+	<update id="updateUserProfile" parameterType="User">
+		UPDATE user
+		SET password=#{password}, name=#{name}, location=#{location}, email=#{email}, age=#{age}		
+		WHERE id = #{id}
+		
+	
+	</update>
+	
+	<delete id="deleteUserProfile" parameterType="String">
+		DELETE
+		FROM user
+		WHERE id=#{id}
+
+	</delete>
 
 
 

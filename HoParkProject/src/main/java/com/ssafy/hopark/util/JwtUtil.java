@@ -43,9 +43,10 @@ public class JwtUtil {
     // 토큰 유효성 검사
 	// Jwts 클래스에서 제공하는 파싱 기능을 이용해서 유효성 검사를 할 수 있다.
 	// parseClaimsJws는 주어진 key로 jwt를 파싱한다. 유효하면 claim을 반환하고, 아니면 예외를 던진다. claim은 일종의 map임을 기억하자
+	// setSigningKey 파라미터가 byte[]임. 그냥 String 넣었다가 오류났다가 고쳤음
     public boolean validateToken(String token) {
         try {
-            Jwts.parserBuilder().setSigningKey(SECRET_KEY).build().parseClaimsJws(token);
+            Jwts.parserBuilder().setSigningKey(SECRET_KEY.getBytes()).build().parseClaimsJws(token);
             return true;
         } catch (Exception e) {
             // 유효하지 않은 토큰
@@ -56,7 +57,8 @@ public class JwtUtil {
     // 토큰에서 id 추출
     // jwt에서 claim을 파싱하고 "id"라는 key로 value를 가져온다.
     public String extractUserId(String token) {
-        Claims claims = Jwts.parserBuilder().setSigningKey(SECRET_KEY).build().parseClaimsJws(token).getBody(); // getBody는 claim이다. payload에 담긴 모든 key-val 쌍이 리턴된다고 생각하자.
+        Claims claims = Jwts.parserBuilder().setSigningKey(SECRET_KEY.getBytes()).build().parseClaimsJws(token).getBody(); // getBody는 claim이다. payload에 담긴 모든 key-val 쌍이 리턴된다고 생각하자.
+        System.out.println(claims + "클레임입니다");
         return claims.get("id", String.class); // claims 메서드를 천천히 살펴보면 subject, exp 등 미리 지정한 메서드들도 있음. get은 개발자가 직접 넣은 key와 반환 class를 파라미터로 받음.
         
     }

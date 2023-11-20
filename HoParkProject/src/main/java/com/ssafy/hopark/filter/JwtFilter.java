@@ -53,10 +53,14 @@ public class JwtFilter extends OncePerRequestFilter {
 
 	        // JWT를 헤더에서 추출
 	        String token = extractJwt(req);
-
+//	        System.out.println(token + "두필터 토큰");
+//	        System.out.println(jwtUtil.validateToken(token) + "검사검사");
+	        
+	        
 	        if (token != null && jwtUtil.validateToken(token)) {
 	            // JWT를 검증하고 유효한 경우 사용자 인증 설정
 	            String userId = jwtUtil.extractUserId(token);
+//	            System.out.println(userId + "여기 필터임");
 	            
 	            // Authentication은 spring security에서 인가를 관리하는 객체임 하위 구현체로 구현함.
 	            // Authentication은 securitycontextholder에 등록되고 관리됨
