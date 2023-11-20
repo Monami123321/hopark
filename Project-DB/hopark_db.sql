@@ -1,13 +1,7 @@
--- 프로젝트 전체 DB입니다. 
+-- 프로젝트 전체 DB입니다. 처음부터 실행하면 초기화됩니다.
+drop schema if exists hopark_db;
 create schema hopark_db;
 use hopark_db;
-
-
-drop table sprots;
-
-
-
-
 
 /*
  운동 저장 테이블 (name - 운동이름 pk, eng_name - 영문이름, category - 대분류, season - 계절, goal - 몸만들기? 스트레스해소?,  individual - 혼자면 true,
@@ -51,6 +45,7 @@ CONSTRAINT work4_fk FOREIGN KEY (work4) references sports (name) ON DELETE SET N
 
 
 select * from user;
+select * from sports;
 
 
 
@@ -134,6 +129,21 @@ INSERT INTO sports (category, name, eng_name, season, goal, individual, indoor, 
 ('기타', '프리즈비', 'frisbee', '사계절', '스트레스', True, True, False, True, True),
 ('기타', '사격', 'shooting', '사계절', '스트레스', True, True, False, True, True),
 ('기타', '양궁', 'archery', '사계절', '스트레스', True, True, False, True, True);
+
+INSERT INTO user (id, password, name, location, email, age)
+VALUES
+('alice', '$2a$10$l028uh16oN5dSPKFAO1bquu/w0nJotmSQbER2bMynMBIzyb6jg486', 'alice', 'London', 'alice@gmail.com', 30),
+('bob', '$2a$10$vgXhGy/ZPTLqFz6CS1fXZOuu35tjbSOfL9OrHuGQuttI4YDRYF4Ey', 'bob', 'Paris', 'bob@gmail.com', 22),
+('david', '$2a$10$vHB7naUs4RTFhKWMFTpc7e/umKa.zCLXBEw4UwhOhm/kFAfvAMaw2', 'david', 'Tokyo', 'david@gmail.com', 28),
+('eva', '$2a$10$0REuh.t/LpVqmVYml8xnx.Mzoq4pJcJ14hegHm7BCW8Zq.lCv6oH2', 'eva', 'Berlin', 'eva@gmail.com', 35),
+('john', '$2a$10$KXXO9ELjn8amLYiM9cUnYuW0alkSNYAb/ZBal3MfIHEM1yM2cuVNq', 'john', 'New York', 'john@gmail.com', 25),
+('linda', '$2a$10$yjaYF.n1PmevRbX20vlizeVhhjaGiVWouYrP0qYZD1tz5xSKeyqtS', 'linda', 'Rio de Janeiro', 'linda@gmail.com', 29),
+('michael', '$2a$10$gO.7J90IrmnGMU1ynIMpjeTVmRxytoLa97OaTBXmvFv6hOyh2S1sa', 'michael', 'Cape Town', 'michael@gmail.com', 45),
+('momo', '$2a$10$OZawGcdGS/7cKdZKp4Hjmu93YuK95xAIU6I8WcT.xi/iXlG8c3MqS', 'momo', 'Seoul', 'momo@gmail.com', 100),
+('peter', '$2a$10$UjfYX1S7V0edzoSg4pOCT.ikwkEO6.Kr43fA0XqRoapOuBP4oj/Wi', 'peter', 'Moscow', 'peter@gmail.com', 32),
+('susan', '$2a$10$gUy6w8KbRKIMTIwyAh9.UuvVAYl0Na4KD7W/f4jO0bR0FzK9rl0OK', 'susan', 'Sydney', 'susan@gmail.com', 40);
+
+
 
 
 

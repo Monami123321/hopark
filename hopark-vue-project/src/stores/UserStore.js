@@ -4,10 +4,10 @@ import axios from "axios";
 import { useRouter } from "vue-router";
 
 // 여기서 정의하면 defineStore 안쪽 콜백함수가 동작할 떄 router가 정의되지 않아서 오류남
-// const router = useRouter(); 
+// const router = useRouter();
 
 export const useUserStore = defineStore("User", () => {
-  
+
   const router = useRouter();
 
   //로그인 요청시 이용할 정보
@@ -23,18 +23,25 @@ export const useUserStore = defineStore("User", () => {
     })
       .then((res) => {
         console.log(res);
+        console.log(res.headers.get("Authorization"));
         // axios 응답이 정상적으로 왔으면 http header에서 jwt를 추출한 다음 localStorage에 저장한다. 따로 분리하지 않고 bearer까지 그냥 저장함 (백에서 처리함)
+
         localStorage.setItem("jwt", res.headers.get("Authorization"));
         alert("로그인 성공!");
-        console.log(router);
         router.push("/");
       })
       .catch((err) => {
-        console.log(err);
         alert("아이디와 비밀번호를 확인하세요.");
         router.push("/");
       });
   }
+
+  //로그아웃 -> localStorage에서 jwt를 지우고 첫화면으로 돌아가기
+  function userLogout() {
+    localStorage.removeItem("jwt");
+    router.push("/");
+  }
+
   // 회원가입 요청에 사용할 정보
   const userRegistData = ref({});
   // 회원가입 메서드 - 백에 axios 요청을 보낸다.
@@ -99,6 +106,7 @@ export const useUserStore = defineStore("User", () => {
   return {
     userLoginData,
     userLogin,
+    userLogout,
     userRegistData,
     userRegist,
     userUpdateData,

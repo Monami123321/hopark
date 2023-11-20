@@ -9,7 +9,7 @@
 
         </form>
         <!-- localStorage에 jwt가 있으면 로그인 상태라고 판단 -->
-        <button v-if="jwt">로그아웃</button>
+        <button @click="store.userLogout()" v-if="jwt">로그아웃</button>
 
 
     </div>
@@ -25,16 +25,18 @@ const userId = ref('')
 const userPassword = ref('')
 
 
+
 const userLoginData = computed(() => {
     return {id: userId.value, password: userPassword.value}
 
 })
 
 const jwt = computed(() => {
-    localStorage.getItem('jwt')
+   return localStorage.getItem('jwt')
 })
 
 //const userLoginData = {id: userId.value, password: userPassword.value}
+
 
 const store = useUserStore();
 
