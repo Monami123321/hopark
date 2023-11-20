@@ -17,7 +17,7 @@ public class WebConfig implements WebMvcConfigurer {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		
-		registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET","POST","PUT","DELETE");
+		registry.addMapping("/**").allowedOrigins("http://localhost:8080", "http://localhost:5173").allowedMethods("GET","POST","PUT","DELETE");
 	}
 	
 	// 정적 파일 제공 처리 - 요청 경로 및 파일 제공하는 경로 등록
