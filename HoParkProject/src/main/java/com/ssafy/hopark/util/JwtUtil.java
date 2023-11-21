@@ -58,7 +58,7 @@ public class JwtUtil {
     // jwt에서 claim을 파싱하고 "id"라는 key로 value를 가져온다.
     public String extractUserId(String token) {
         Claims claims = Jwts.parserBuilder().setSigningKey(SECRET_KEY.getBytes()).build().parseClaimsJws(token).getBody(); // getBody는 claim이다. payload에 담긴 모든 key-val 쌍이 리턴된다고 생각하자.
-        System.out.println(claims + "클레임입니다");
+//        System.out.println(claims + "클레임입니다");
         return claims.get("id", String.class); // claims 메서드를 천천히 살펴보면 subject, exp 등 미리 지정한 메서드들도 있음. get은 개발자가 직접 넣은 key와 반환 class를 파라미터로 받음.
         
     }

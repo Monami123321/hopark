@@ -3,6 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssafy.hopark.model.dao.SportsDao">
+	<resultMap type="com.ssafy.hopark.model.dto.Sports" id="sportsMap">
+		<result column="eng_name" property="engName"/>
+	</resultMap>
+	<select id="selectAll" resultMap="sportsMap">
+		SELECT *
+		FROM sports
+	</select>
+
+	
+
 
 
 </mapper>

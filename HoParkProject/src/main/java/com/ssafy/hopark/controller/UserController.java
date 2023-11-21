@@ -46,8 +46,10 @@ public class UserController {
 		
 		HttpHeaders header =  new HttpHeaders();
 		header.set("Authorization", "Bearer " + token); // 토큰 심는 헤더 규칙 -> Authorization: Bearer token(띄어쓰기 필요)
-				
-		
+		header.set("Access-Control-Expose-Headers", "Authorization");
+//		System.out.println("응답 잘 감");
+//		System.out.println(token + "토큰임");
+//		System.out.println(header.toString() + "헤더임");
 		return new ResponseEntity<String>(SUCCESS, header, HttpStatus.OK);
 
 	}
