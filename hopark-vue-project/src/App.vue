@@ -3,10 +3,17 @@
     <TheHeaderNav/>
     <router-view></router-view>
   </div>
+
+  <Sidebar></Sidebar>
+  
+  
+
+
 </template>
 
 <script setup>
 import TheHeaderNav from '@/components/common/TheHeaderNav.vue'
+import Sidebar from './components/common/Sidebar.vue';
 const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY
 console.log(YOUTUBE_API_KEY)
 

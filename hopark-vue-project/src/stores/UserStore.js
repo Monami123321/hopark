@@ -22,8 +22,6 @@ export const useUserStore = defineStore("User", () => {
       data: userLoginData,
     })
       .then((res) => {
-        console.log(res);
-        console.log(res.headers.get("Authorization"));
         // axios 응답이 정상적으로 왔으면 http header에서 jwt를 추출한 다음 localStorage에 저장한다. 따로 분리하지 않고 bearer까지 그냥 저장함 (백에서 처리함)
 
         localStorage.setItem("jwt", res.headers.get("Authorization"));
@@ -71,7 +69,7 @@ export const useUserStore = defineStore("User", () => {
     axios({
       method: "PUT",
       url: import.meta.env.VITE_BACK_URI + "user/update",
-      headers: { Authorization: localStorage.get("jwt") },
+      headers: { Authorization: localStorage.getItem("jwt") },
       data: registData.value,
     })
       .then((res) => {
@@ -90,10 +88,11 @@ export const useUserStore = defineStore("User", () => {
     axios({
       method: "DELETE",
       url: import.meta.env.VITE_BACK_URI + "user/delete",
-      headers: { Authorization: localStorage.get("jwt") },
+      headers: { Authorization: localStorage.getItem("jwt") },
     })
       .then((res) => {
         alert("회원탈퇴가 완료되었습니다.");
+        localStorage.removeItem("jwt");
         router.push("/");
       })
       .catch((err) => {
