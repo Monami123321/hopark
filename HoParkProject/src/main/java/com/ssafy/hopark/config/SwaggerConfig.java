@@ -39,7 +39,7 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("SSAFIT 최종 프로젝트 호박").description("운동추천서비스 API입니다.").version("0.1").build();
+		return new ApiInfoBuilder().title("SSAFIT 최종 프로젝트 호박").description("운동추천서비스 API입니다. 아자아자 화이팅\n팀장 박민아\n팀원 유호영").version("0.1").build();
 	}
 	
 	
