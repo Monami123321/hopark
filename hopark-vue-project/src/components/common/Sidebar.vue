@@ -2,10 +2,10 @@
   <div>
     <div class="position-absolute top-0 end-0">
       <!-- 사이드 메뉴 토글 버튼 -->
-      <button class="" @click="toggleMenu">메뉴</button>
+      <button class="mimibutton fw-bold" @click="toggleMenu">메뉴</button>
 
       <!-- 동적으로 보일 메뉴 영역 -->
-      <transition name="sidebar" class="position-relative top-0 end-0">
+      <transition name="sidebar" class="position-relative top-0 end-0 rounded">
         <div v-if="isMenuOpen" class="sidebar-menu">
           <div @click="closeMenu">닫기</div>
           <!-- 여기에 메뉴 항목 추가 -->
@@ -86,8 +86,12 @@ const closeMenu = () => {
   left: 0;
   width: 200px;
   height: 100vh;
-  background-color: #E4C1A3;
+  background-color: antiquewhite;
+  opacity: 0.5;
+
   padding: 10px;
 }
+
+/*  btn btn-info border border-2 border-dark rounded-circle fs-2 fw-bold */
 </style>
   
