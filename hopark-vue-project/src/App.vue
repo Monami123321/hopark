@@ -2,6 +2,7 @@
   <div>
     <TheHeaderNav/>
     <router-view></router-view>
+    <button @click="getAllSports()">모든운동가져오기</button>
   </div>
 
   <Sidebar></Sidebar>
@@ -14,8 +15,9 @@
 <script setup>
 import TheHeaderNav from '@/components/common/TheHeaderNav.vue'
 import Sidebar from './components/common/Sidebar.vue';
-const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY
-console.log(YOUTUBE_API_KEY)
+import {getAllSports} from '@/utils/sportsUtil.js'
+
+
 
 
 </script>
