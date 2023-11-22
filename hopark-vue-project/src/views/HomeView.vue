@@ -1,37 +1,35 @@
 <template>
   <div>
-    <button @click="test">axios테스트테스트</button>
-
-
+    <!-- <header>
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+      </nav>
+    </header> -->
+    <div class="position-absolute end-0 bottom-0">
+      <router-link :to="{name: 'select'}" class="mx-4 mimibutton">직접 선택하기</router-link>
+      <router-link :to="{name: 'home'}" class="mimibutton">FFIT 추천받기</router-link>
+    </div>
+    <!-- <RouterView/> -->
+    <Sidebar></Sidebar>
   </div>
 </template>
 
 <script setup>
-  import { inject } from 'vue';
-
-  const axios = inject("$axios")
-
-  function test() {
-    axios({
-      url: "http://localhost:8080/user/login",
-      method:"POST",
-      data: {
-        id: "zzz",
-        password: "zzz"
-
-      }
-    }).then((res) => {
-      console.log(res)
-      return;
-    }).catch((e) => {
-      console.log(e)
-      return
-    })
-  }
-
-
+  import Sidebar from '@/components/common/Sidebar.vue';
+  import {RouterLink, RouterView} from 'vue-router'
 </script>
 
-<style scoped>
-
+<style>
+  body {
+    background-image: url("@/assets/main_bg.jpg");
+    background-position: 0% 10%;
+  }
+  .mimibutton {
+    background-color: #73D0BB;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 15px 20px;
+    font-size: 20px;
+  }
 </style>

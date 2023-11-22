@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
+import SelectView from "@/views/SelectView.vue";
 import LoginForm from "@/components/common/LoginForm.vue";
 import { isAuthenticated, isOpenedUrl } from "@/utils/authUtil.js";
 
@@ -21,6 +22,11 @@ const router = createRouter({
       path: "/home",
       name: "home",
       component: HomeView,
+    },
+    {
+      path: "/select",
+      name: "select",
+      component: SelectView,
     },
   ],
 });
