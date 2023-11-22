@@ -46,7 +46,7 @@ public class UserController {
 		
 		HttpHeaders header =  new HttpHeaders();
 		header.set("Authorization", "Bearer " + token); // 토큰 심는 헤더 규칙 -> Authorization: Bearer token(띄어쓰기 필요)
-		header.set("Access-Control-Expose-Headers", "Authorization");
+		header.set("Access-Control-Expose-Headers", "Authorization"); // 안 하면 axios 응답에서 토큰이 안 보임.
 //		System.out.println("응답 잘 감");
 //		System.out.println(token + "토큰임");
 //		System.out.println(header.toString() + "헤더임");
@@ -58,6 +58,7 @@ public class UserController {
 	@ApiOperation(value = "회원가입 메서드 입니다.",notes = "입력된 정보를 DB에 저장합니다. 비밀번호는 BCryptPasswordEncoder를 통해 암호화 합니다.")
 	@PostMapping("regist")
 	public ResponseEntity<String> regist(@RequestBody User user) {
+		System.out.println(user.toString());
 		
 		boolean res = userService.regist(user);
 		
