@@ -9,7 +9,6 @@
 	<select id="selectAll" resultMap="sportsMap">
 		SELECT *
 		FROM sports
-	
 	</select>
 	
 	<select id="selectByCondition" parameterType="SportsSearchCondition" resultMap="sportsMap">
