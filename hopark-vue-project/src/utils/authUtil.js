@@ -29,7 +29,7 @@ targetUrl 넣을 때 참고
 */
 export function isOpenedUrl(targetUrl) {
     // 로그인 상관 없이 허용한 url 목록
-    const opened = ["/", "/login", "/regist", "/select"]
+    const opened = ["/", "/login", "/regist", "/select", "/recommend"]
      
     // 허용한 목록 안에 포함 되는지 확인
     // opend를 순회하면서 targetUrl.path랑 똑같으면 그 element를 반환함
