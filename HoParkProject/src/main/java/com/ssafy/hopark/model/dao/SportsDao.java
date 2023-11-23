@@ -11,4 +11,5 @@ public interface SportsDao {
 
 	List<Sports> selectByCondition(SportsSearchCondition searchCondition);
 
+
 }

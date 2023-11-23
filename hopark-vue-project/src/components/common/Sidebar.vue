@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="position-absolute top-0 end-0">
+    <div class="position-fixed top-0 end-0">
       <!-- 사이드 메뉴 토글 버튼 -->
       <button class="mimibutton fw-bold" @click="toggleMenu">{{isMenuOpen === true ? '닫기' : '메뉴'}}</button>
 
@@ -8,12 +8,12 @@
       <transition name="sidebar" class="position-relative top-0 end-0 rounded">
         <div v-if="isMenuOpen" class="sidebar-menu d-flex flex-column justify-content">
           <!-- 여기에 메뉴 항목 추가 -->
-          <router-link class="fs-5 mx-2" v-if="!jwt" :to="{name: 'login'}" >로그인</router-link>
-          <button class="fs-5 mx-2" @click="store.userLogout(() => jwt = !jwt)" v-else> 로그아웃</button>
-          <RouterLink class="fs-5 mx-2" to="/">처음으로</RouterLink>
-          <RouterLink class="fs-5 mx-2" to="/regist">회원가입</RouterLink>
-          <div>사이트 소개</div>
-          <div>고객센터</div>
+          <router-link class="btn btn-dark fs-5 my-3 mx-2" v-if="!jwt" :to="{name: 'login'}" >로그인</router-link>
+          <button class="btn btn-dark fs-5 my-3 mx-2" @click="store.userLogout(() => jwt = !jwt)" v-else> 로그아웃</button>
+          <RouterLink class="btn btn-dark fs-5 my-3 mx-2" to="/">처음으로</RouterLink>
+          <RouterLink class="btn btn-dark fs-5 my-3 mx-2" to="/regist">회원가입</RouterLink>
+          <div class="btn btn-dark fs-5 my-3 mx-2">사이트 소개</div>
+          <div class="btn btn-dark fs-5 my-3 mx-2">고객센터</div>
         </div>
       </transition>
       
