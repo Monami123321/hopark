@@ -1,6 +1,7 @@
 package com.ssafy.hopark.model.service;
 
 import com.ssafy.hopark.model.dto.User;
+import com.ssafy.hopark.model.dto.Work;
 
 public interface UserService {
 
@@ -11,5 +12,9 @@ public interface UserService {
 	boolean updateUserProfile(User user, String targetId);
 
 	boolean deleteUserProfile(String principal);
+
+	User getInfo(String principal);
+
+	boolean updateWork(Work work);
 
 }

@@ -106,6 +106,11 @@ export const useUserStore = defineStore("User", () => {
       });
   }
 
+  // 로그인 된 유저의 정보 저장
+  const loginUser = ref(null)
+
+
+
   return {
     userLoginData,
     userLogin,
@@ -114,5 +119,6 @@ export const useUserStore = defineStore("User", () => {
     userUpdateData,
     userUpdate,
     userDelete,
+    loginUser,
   };
 });
