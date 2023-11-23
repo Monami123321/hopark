@@ -122,29 +122,35 @@
         </form>
       </div>
     </ul>
-    <button @click="gotoVideo" class="submit">FFIT 시작하기</button>
+    <button @click="gotoVideo(router)" class="submit">FFIT 시작하기</button>
   </div>
 </template>
 
 <script setup>
 import { pickRandomSports } from "@/utils/sportsUtil.js"
-import { useRouter } from "vue-router";
 
 import axios from "axios";
+import { useRouter } from "vue-router";
 const router = useRouter();
 
-
-
-async function gotoVideo() {
+async function gotoVideo(router) {
   const work = await pickRandomSports()
-  console.log(work,"work임")
+  
+  let worksData = work.map(e => e.name)
+  let finalData = {
+    work1: worksData[0],
+    work2: worksData[1],
+    work3: worksData[2],
+    work4: worksData[3],
+  }
   try {
     const res = await axios({
       method: "PUT",
       url: `${import.meta.env.VITE_BACK_URI}user/work`,
       headers: { Authorization: localStorage.getItem("jwt") },
+      data: finalData
     })
-    router.push("/video");
+    router.push("/video")
     return
 
   } catch(e) {

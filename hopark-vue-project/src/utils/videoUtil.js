@@ -1,6 +1,9 @@
 import axios from "axios";
+import { useVideoStore } from "../stores/videoStore";
+
 
 export async function youtubeSearch(keyword) {
+  const store = useVideoStore();
   const URL = "https://www.googleapis.com/youtube/v3/search";
   const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
   try {
@@ -15,6 +18,8 @@ export async function youtubeSearch(keyword) {
         maxResults: 10,
       },
     });
+    console.log(res)
+    store.videoList = res.data;
   } catch (e) {
     console.log(e);
   }
