@@ -11,4 +11,6 @@ public interface SportsService {
 
 	List<Sports> searchByCondition(SportsSearchCondition searchCondition);
 
+	List<Sports> pickSports();
+
 }

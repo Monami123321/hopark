@@ -32,7 +32,7 @@ public class SecurityConfig {
 				.csrf().disable() // RESTful 서버라서 csrf도 끔
 				.cors().and() // cors 허용함
 				.authorizeHttpRequests() // 요청에 권한부여
-				.antMatchers("/user/login", "/user/regist", "/sports/searchByCondition", "/sports/getAll").permitAll() // http://localhost:8080/user/{login, regist} 요청은 무조건 허가함 (로그인 요청, 회원가입 요청, 운동 추천 받기, 운동 직접 고르기)
+				.antMatchers("/user/login", "/user/regist").permitAll() // http://localhost:8080/user/{login, regist} 요청은 무조건 허가함 (로그인 요청, 회원가입 요청, 운동 추천 받기, 운동 직접 고르기)
 				.antMatchers("/swagger-ui/**", "/swagger-resources/**", "/v2/api-docs", "/webjars/**").permitAll() // Swagger도 허용.. index.html말고 api적히는 문서 경로도 다 써줘야 정상작동함.
 				.anyRequest().authenticated().and() // 그 외에 전부 인증 받아야 함
 				.sessionManagement() // 세션 설정 시작(jwt사용 위해)

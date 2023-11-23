@@ -122,15 +122,50 @@
         </form>
       </div>
     </ul>
-    <router-link :to="{ name: 'video' }" class="submit"
-      >FFIT 시작하기</router-link
-    >
+    <button @click="gotoVideo" class="submit">FFIT 시작하기</button>
   </div>
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { pickRandomSports } from "@/utils/sportsUtil.js"
+import { useRouter } from "vue-router";
+
+import axios from "axios";
+const router = useRouter();
+
+
+
+async function gotoVideo() {
+  const work = await pickRandomSports()
+  console.log(work,"work임")
+  try {
+    const res = await axios({
+      method: "PUT",
+      url: `${import.meta.env.VITE_BACK_URI}user/work`,
+      headers: { Authorization: localStorage.getItem("jwt") },
+    })
+    router.push("/video");
+    return
+
+  } catch(e) {
+    console.log(e)
+    return;
+  }
+  
+
+
+}
+
+
+
+
+
+
 </script>
+
+
+
+
 
 <style scoped>
 .wrap {

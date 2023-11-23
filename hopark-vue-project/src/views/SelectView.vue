@@ -5,18 +5,24 @@
                 <form>
                     <div v-for="sorted in store.sortedList">
                         <div class="d-flex flex-column justify-content">
-                            <div class="my -3 mx-3 fs-3 fw-bold">{{ sorted[0].category}}</div>
+                            <div class="my -3 mx-3 fs-3 fw-bold">{{ sorted[0].category }}</div>
                             <div class="d-flex justify-content">
                                 <div class="mx-1" v-for="item in sorted">
-                                        <input type="radio" :name="item.category" id="">
-                                        {{ item.name }}
-                                        {{ item.engName }}
+                                    <input type="radio" :name="item.category" :id="item.name">
+                                    <label :for="item.name">{{item.name+" "+item.engName}}</label>
+                                    
+                                    <!-- {{ item.engName }} -->
                                 </div>
                             </div>
                             <hr/>
                         </div>
+                        <hr>
                     </div>
                 </form>
+                <div class="mt-4">
+                    <router-link :to="{ name: 'regist' }" class="submit">FFIT 시작하기</router-link>
+                </div>
+
             </div>
             <div v-else>
                 <h2>로딩중..</h2>
@@ -65,6 +71,8 @@ onMounted(async () => {
     store.sortedList = sortedList
 })
 
+const selectedList = ref([])
+
 
 
 
@@ -75,6 +83,15 @@ onMounted(async () => {
 
 <style scoped>
 .wrap {
-  background-color: #fffbef;
+    background-color: #FFFBEF;
+}
+
+.submit {
+    background-color: #73D0BB;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 15px 20px;
+    font-size: 20px;
 }
 </style>
