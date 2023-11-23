@@ -1,6 +1,7 @@
 package com.ssafy.hopark.model.dao;
 
 import com.ssafy.hopark.model.dto.User;
+import com.ssafy.hopark.model.dto.Work;
 
 public interface UserDao {
 
@@ -11,5 +12,7 @@ public interface UserDao {
 	int updateUserProfile(User user);
 
 	int deleteUserProfile(String principal);
+
+	int updateWork(Work work);
 
 }

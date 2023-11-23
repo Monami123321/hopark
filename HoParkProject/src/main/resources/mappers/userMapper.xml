@@ -31,6 +31,12 @@
 		WHERE id=#{id}
 
 	</delete>
+	
+	<update id="updateWork" parameterType="Work">
+		UPDATE user
+		SET work1=#{work1}, work2=#{work2}, work3=#{work3}, work4=#{work4}
+		WHERE id=#{name}
+	</update>
 
 
 
