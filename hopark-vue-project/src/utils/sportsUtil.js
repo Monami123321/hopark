@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useRouter } from "vue-router";
 
 // DB에 저장된 모든 운동 정보 다 가져오기
 // 운동 객체 배열로 리턴
@@ -39,18 +38,15 @@ export function searchByCondition(searchCondition) {
 
 // DB에서 랜덤으로 4개 뽑아오기
 export async function pickRandomSports() {
-  const router = useRouter();
   try {
     const res = await axios({
       method: "GET",
-      url: `${import.meta.env.VITE_BACK_URI}sport/pick`,
+      url: `${import.meta.env.VITE_BACK_URI}sports/pick`,
       headers: { Authorization: localStorage.getItem("jwt") },
     });
     return res.data;
   } catch (err) {
-    console.log(err);
     alert("오류발생");
-    router.push("/");
     return;
   }
 }

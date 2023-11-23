@@ -59,7 +59,6 @@ public class UserController {
 	@ApiOperation(value = "회원가입 메서드 입니다.", notes = "입력된 정보를 DB에 저장합니다. 비밀번호는 BCryptPasswordEncoder를 통해 암호화 합니다.")
 	@PostMapping("regist")
 	public ResponseEntity<String> regist(@RequestBody User user) {
-		System.out.println(user.toString());
 
 		boolean res = userService.regist(user);
 
