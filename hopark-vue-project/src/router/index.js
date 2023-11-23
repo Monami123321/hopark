@@ -5,6 +5,7 @@ import SelectView from "@/views/SelectView.vue";
 import LoginForm from "@/components/common/LoginForm.vue";
 import RegistForm from "@/components/common/RegistForm.vue";
 import RecommendView from "@/views/RecommendView.vue";
+import VideoView from "@/views/VideoView.vue";
 import { isAuthenticated, isOpenedUrl } from "@/utils/authUtil.js";
 
 const router = createRouter({
@@ -45,6 +46,11 @@ const router = createRouter({
       path: "/recommend",
       name: "recommend",
       component: RecommendView,
+    },
+    {
+      path: "/video",
+      name: "video",
+      component: VideoView,
     },
   ],
 });

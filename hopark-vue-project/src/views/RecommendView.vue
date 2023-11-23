@@ -122,26 +122,30 @@
         </form>
       </div>
     </ul>
-    <router-link :to="{name: 'regist'}" class="submit">FFIT 시작하기</router-link>
+    <router-link :to="{ name: 'video' }" class="submit"
+      >FFIT 시작하기</router-link
+    >
   </div>
 </template>
 
 <script setup>
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <style scoped>
-.wrap{
-    background-color: #FFFBEF;
+.wrap {
+  background-color: #fffbef;
 }
-.submit{
-    background-color: #73D0BB;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    padding: 15px 20px;
-    font-size: 20px;
+.submit {
+  background-color: #73d0bb;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 15px 20px;
+  font-size: 20px;
 }
-.btn1, .btn2{
-    margin-right: 20px;
+.btn1,
+.btn2 {
+  margin-right: 20px;
 }
 </style>

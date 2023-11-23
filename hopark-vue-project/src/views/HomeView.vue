@@ -23,9 +23,7 @@
 </script>
 
 <style>
-  div.img {
-    
-  }
+  
   .bgImg {
     background-image: url("@/assets/main_bg.jpg");
     width: 1920px;
