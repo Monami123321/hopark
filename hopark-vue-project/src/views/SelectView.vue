@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div style="background-color: #FFFBEF">
+    <div class="wrap">
+        <div>
             <div v-if="!!sportsList">
                 <form>
                     <div v-for="sorted in store.sortedList">
@@ -13,6 +13,7 @@
                                         {{ item.engName }}
                                 </div>
                             </div>
+                            <hr/>
                         </div>
                     </div>
                 </form>
@@ -72,4 +73,8 @@ onMounted(async () => {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.wrap {
+  background-color: #fffbef;
+}
+</style>
