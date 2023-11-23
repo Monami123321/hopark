@@ -1,6 +1,6 @@
 <template>
     <div class="wrap">
-        <div style="background-color: #FFFBEF">
+        <div>
             <div v-if="!!sportsList">
                 <form>
                     <div v-for="sorted in store.sortedList">
@@ -14,6 +14,7 @@
                                     <!-- {{ item.engName }} -->
                                 </div>
                             </div>
+                            <hr/>
                         </div>
                         <hr>
                     </div>

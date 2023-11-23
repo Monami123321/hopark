@@ -31,6 +31,9 @@
     height: 1080px;
     /* background-position: 0% 10%; */
   }
+  img {
+    padding: 200px 300px;
+  }
   .mimibutton {
     background-color: #73D0BB;
     border: none;
