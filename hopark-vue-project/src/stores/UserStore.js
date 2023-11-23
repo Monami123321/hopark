@@ -31,23 +31,27 @@ export const useUserStore = defineStore("User", () => {
       .catch((err) => {
         alert("아이디와 비밀번호를 확인하세요.");
         router.push("/");
+        
       });
   }
 
   //로그아웃 -> localStorage에서 jwt를 지우고 첫화면으로 돌아가기
-  function userLogout() {
+  function userLogout(cb) {
     localStorage.removeItem("jwt");
+    alert("로그아웃 되었습니다.")
+    cb();
+    router.push("/logout");
     router.push("/");
+    location.reload
   }
 
-  // 회원가입 요청에 사용할 정보
-  const userRegistData = ref({});
   // 회원가입 메서드 - 백에 axios 요청을 보낸다.
-  function userRegist() {
+  function userRegist(registData) {
+    console.log(registData)
     axios({
       method: "POST",
       url: import.meta.env.VITE_BACK_URI + "user/regist",
-      data: registData.value,
+      data: registData,
     })
       .then((res) => {
         // axios 응답이 정상적으로 왔으면
@@ -106,7 +110,6 @@ export const useUserStore = defineStore("User", () => {
     userLoginData,
     userLogin,
     userLogout,
-    userRegistData,
     userRegist,
     userUpdateData,
     userUpdate,
