@@ -8,8 +8,9 @@ import { getAllSports, searchByCondition } from "@/utils/sportsUtil";
 // const router = useRouter();
 
 export const useSportsStore = defineStore("Sports", () => {
+
+  let sortedList = ref(null)
   
 
-  return {
-  };
+  return { sortedList, };
 });
