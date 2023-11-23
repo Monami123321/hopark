@@ -122,12 +122,23 @@
         </form>
       </div>
     </ul>
-    <router-link :to="{name: 'regist'}" class="submit">FFIT 시작하기</router-link>
+    <router-link @click="pickRandomSports" :to="{name: 'regist'}" class="submit">FFIT 시작하기</router-link>
   </div>
 </template>
 
 <script setup>
+import { pickRandomSports } from "@/utils/sportsUtil.js"
+
+
+
+
+
+
 </script>
+
+
+
+
 
 <style scoped>
 .wrap{

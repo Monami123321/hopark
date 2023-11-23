@@ -50,5 +50,20 @@ public class SportsController {
 		return new ResponseEntity<List<Sports>>(list, HttpStatus.OK);
 
 	}
+	
+	@ApiOperation(value = "DB에서 4개를 알아서 뽑아서 반환합니다.", notes = "DB에서 운동 4개를 무작위로 선택하여 리스트로 반환합니다.")
+	@GetMapping("pick")
+	public ResponseEntity<?> pickSports() {
+		List<Sports> list = sportsService.pickSports();
+		
+		if(list == null || list.size() < 4) {
+			return new ResponseEntity<String>(FAIL, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<List<Sports>>(list, HttpStatus.OK);
+		
+		
+	}
+	
+	
 
 }
