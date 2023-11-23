@@ -4,6 +4,7 @@ import LogoutView from "@/views/LogoutView.vue";
 import SelectView from "@/views/SelectView.vue";
 import LoginForm from "@/components/common/LoginForm.vue";
 import RegistForm from "@/components/common/RegistForm.vue";
+import RecommendView from "@/views/RecommendView.vue";
 import { isAuthenticated, isOpenedUrl } from "@/utils/authUtil.js";
 
 const router = createRouter({
@@ -39,6 +40,11 @@ const router = createRouter({
       path: "/regist",
       name: "regist",
       component: RegistForm,
+    },
+    {
+      path: "/recommend",
+      name: "recommend",
+      component: RecommendView,
     },
   ],
 });

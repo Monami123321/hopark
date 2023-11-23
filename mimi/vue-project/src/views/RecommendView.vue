@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h2>RecommendView</h2>
+        <h2>무료 운동 성향 테스트</h2>
+        <body>
+            <
+        </body>
     </div>
 </template>
 
