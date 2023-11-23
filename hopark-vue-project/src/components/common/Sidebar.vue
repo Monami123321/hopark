@@ -2,15 +2,16 @@
   <div>
     <div class="position-absolute top-0 end-0">
       <!-- 사이드 메뉴 토글 버튼 -->
-      <button class="" @click="toggleMenu">메뉴</button>
+      <button class="mimibutton fw-bold" @click="toggleMenu">{{isMenuOpen === true ? '닫기' : '메뉴'}}</button>
 
       <!-- 동적으로 보일 메뉴 영역 -->
-      <transition name="sidebar" class="position-relative top-0 end-0">
-        <div v-if="isMenuOpen" class="sidebar-menu">
-          <div @click="closeMenu">닫기</div>
+      <transition name="sidebar" class="position-relative top-0 end-0 rounded">
+        <div v-if="isMenuOpen" class="sidebar-menu d-flex flex-column justify-content">
           <!-- 여기에 메뉴 항목 추가 -->
-          <router-link v-if="!jwt" :to="{name: 'login'}" >로그인</router-link>
-          <button @click="store.userLogout()" v-else> 로그아웃</button>
+          <router-link class="fs-5 mx-2" v-if="!jwt" :to="{name: 'login'}" >로그인</router-link>
+          <button class="fs-5 mx-2" @click="store.userLogout(() => jwt = !jwt)" v-else> 로그아웃</button>
+          <RouterLink class="fs-5 mx-2" to="/">처음으로</RouterLink>
+          <RouterLink class="fs-5 mx-2" to="/regist">회원가입</RouterLink>
           <div>사이트 소개</div>
           <div>고객센터</div>
         </div>
@@ -27,15 +28,16 @@
 </template>
   
 <script setup>
-import { ref, computed, } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useUserStore } from '@/stores/UserStore';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
 const store = useUserStore()
 
+const trigger = ref(false);
 
-const jwt = computed(() => {
-  return localStorage.getItem('jwt')
-})
+const jwt = ref(localStorage.getItem('jwt'))
 
 
 const isMenuOpen = ref(false);
@@ -44,9 +46,7 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
+
 </script>
   
 <style scoped>
@@ -86,8 +86,12 @@ const closeMenu = () => {
   left: 0;
   width: 200px;
   height: 100vh;
-  background-color: #E4C1A3;
+  background-color: antiquewhite;
+  opacity: 0.5;
+
   padding: 10px;
 }
+
+/*  btn btn-info border border-2 border-dark rounded-circle fs-2 fw-bold */
 </style>
   

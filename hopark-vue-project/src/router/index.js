@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
+import LogoutView from "@/views/LogoutView.vue";
 import SelectView from "@/views/SelectView.vue";
 import LoginForm from "@/components/common/LoginForm.vue";
+import RegistForm from "@/components/common/RegistForm.vue";
 import { isAuthenticated, isOpenedUrl } from "@/utils/authUtil.js";
 
 const router = createRouter({
@@ -27,6 +29,16 @@ const router = createRouter({
       path: "/select",
       name: "select",
       component: SelectView,
+    },
+    {
+      path: "/logout",
+      name: "logout",
+      component: LogoutView,
+    },
+    {
+      path: "/regist",
+      name: "regist",
+      component: RegistForm,
     },
   ],
 });
