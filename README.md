@@ -8,7 +8,7 @@
 
 ## 첫화면
 
-![대문](대문.png){: width="600" height="400"}
+![대문](images/대문.png){: width="600" height="400"}
 
 ## 핵심 서비스 - 자기에게 맞는 운동 찾기! 
 
@@ -25,54 +25,68 @@
 ![대문](images/영상추천.png){: width="600" height="400"}
  
 ## 프론트 vue 프로젝트 구조
-
-├─ .env
-├─ .gitignore
-├─ index.html
-├─ package-lock.json
-├─ package.json
-├─ public
-│  └─ favicon.ico
-├─ README.md
-├─ src
-│  ├─ App.vue
-│  ├─ assets
-│  │  ├─ logo.png
-│  │  ├─ main_bg.jpg
-│  │  └─ nocturne.mp3
-│  ├─ components
-│  │  └─ common
-│  │     ├─ LoginForm.vue
-│  │     ├─ RegistForm.vue
-│  │     ├─ Sidebar.vue
-│  │     └─ TheHeaderNav.vue
-│  ├─ main.js
-│  ├─ router
-│  │  └─ index.js
-│  ├─ stores
-│  │  ├─ counter.js
-│  │  ├─ SportsStore.js
-│  │  ├─ UserStore.js
-│  │  └─ VideoStore.js
-│  ├─ utils
-│  │  ├─ authUtil.js
-│  │  ├─ kakaoUtil.js
-│  │  ├─ sportsUtil.js
-│  │  ├─ userUtil.js
-│  │  └─ videoUtil.js
-│  └─ views
-│     ├─ AboutView.vue
-│     ├─ HomeView.vue
-│     ├─ LogoutView.vue
-│     ├─ RecommendView.vue
-│     ├─ SelectView.vue
-│     └─ VideoView.vue
-└─ vite.config.js
-
-
+----------------------------------------------------------------------
+├─ .env <br>
+├─ .gitignore <br>
+├─ index.html <br>
+├─ package-lock.json <br>
+├─ package.json <br>
+├─ public <br>
+│  └─ favicon.ico <br>
+├─ README.md <br>
+├─ src <br>
+│  ├─ App.vue <br>
+│  ├─ assets <br>
+│  │  ├─ logo.png <br>
+│  │  ├─ main_bg.jpg <br>
+│  │  └─ nocturne.mp3 <br>
+│  ├─ components <br>
+│  │  └─ common <br>
+│  │     ├─ LoginForm.vue <br>
+│  │     ├─ RegistForm.vue <br>
+│  │     ├─ Sidebar.vue <br>
+│  │     └─ TheHeaderNav.vue <br>
+│  ├─ main.js <br>
+│  ├─ router <br>
+│  │  └─ index.js <br>
+│  ├─ stores <br>
+│  │  ├─ counter.js <br>
+│  │  ├─ SportsStore.js <br>
+│  │  ├─ UserStore.js <br>
+│  │  └─ VideoStore.js <br>
+│  ├─ utils <br>
+│  │  ├─ authUtil.js <br>
+│  │  ├─ kakaoUtil.js <br>
+│  │  ├─ sportsUtil.js <br>
+│  │  ├─ userUtil.js <br>
+│  │  └─ videoUtil.js <br>
+│  └─ views <br>
+│     ├─ AboutView.vue <br>
+│     ├─ HomeView.vue <br>
+│     ├─ LogoutView.vue <br>
+│     ├─ RecommendView.vue <br>
+│     ├─ SelectView.vue <br>
+│     └─ VideoView.vue <br>
+└─ vite.config.js <br>
+-------------------------------------------------------------------------------
 ## 백엔드 클래스 다이어그램
-![클래스다이어그램](classDiagram.png){: width="800" height="600"}
+![스웨거](images/swagger.png){: width="1000" height="800"}
+
+## 백 API
+
 
 # 특장점
 
 ## **spring-security + JWT 적용**
+
+### DB 암호화 적용 -> 관리자도 비밀번호를 알 수 없습니다.
+![DB암호화예시](images/DB암호.png){: width="1000" height="800"}
+
+### 토큰 활용 인증/인가 관리 -> 네비게이션가드 + spring-security + JWT
+
+![네비게이션가드]](images/네비게이션가드.png){: width="1000" height="800"}
+
+![JWT]](images/jwt.png){: width="1000" height="800"}
+
+
+
