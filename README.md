@@ -70,7 +70,7 @@
 └─ vite.config.js <br>
 -------------------------------------------------------------------------------
 ## 백엔드 클래스 다이어그램
-![스웨거](images/swagger.png){: width="1000" height="800"}
+![스웨거](images/swagger.PNG){: width="1000" height="500"}
 
 ## 백 API
 
@@ -84,9 +84,9 @@
 
 ### 토큰 활용 인증/인가 관리 -> 네비게이션가드 + spring-security + JWT
 
-![네비게이션가드](images/네비게이션가드.png){: width="1000" height="800"}
+![네비게이션가드](images/네비게이션가드.PNG){: width="1000" height="800"}
 
-![JWT](images/jwt.png){: width="1000" height="800"}
+![JWT](images/jwt.PNG){: width="1000" height="800"}
 
 
 
