@@ -8,4 +8,4 @@ FFIT과 함께하면 다양한 운동을 경험하며 나에게 맞는 운동을
 
 
 ![대문](대문.png)
-![클래스다이어그램](calssDiagram.png)
+![클래스다이어그램](classDiagram.png)
