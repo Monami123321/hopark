@@ -7,5 +7,5 @@
 ###### 당신의 운동 여정, 지금 시작해볼까요? 
 
 
-![대문](대문.png){: width="500" height="300"}
-![클래스다이어그램](classDiagram.png){: width="500" height="300"}
+![대문](대문.png){: width="600" height="400"}
+![클래스다이어그램](classDiagram.png){: width="800" height="600"}
