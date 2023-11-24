@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card">
@@ -10,23 +10,11 @@
             <form @submit.prevent="store.userLogin(userLoginData)">
               <div class="mb-3">
                 <label for="username" class="form-label">아이디</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  v-model="userId"
-                  required
-                />
+                <input type="text" class="form-control" id="username" v-model="userId" required />
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">비밀번호</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  v-model="userPassword"
-                  required
-                />
+                <input type="password" class="form-control" id="password" v-model="userPassword" required />
               </div>
               <button type="submit" class="btn btn-primary w-100">
                 로그인
@@ -54,5 +42,6 @@ const userLoginData = computed(() => {
 
 const store = useUserStore();
 </script>
+
 
 <style scoped></style>

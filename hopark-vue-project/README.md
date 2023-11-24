@@ -27,3 +27,50 @@ npm run dev
 ```sh
 npm run build
 ```
+
+```
+hopark-vue-project
+├─ .env
+├─ .gitignore
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ public
+│  └─ favicon.ico
+├─ README.md
+├─ src
+│  ├─ App.vue
+│  ├─ assets
+│  │  ├─ logo.png
+│  │  ├─ main_bg.jpg
+│  │  └─ nocturne.mp3
+│  ├─ components
+│  │  └─ common
+│  │     ├─ LoginForm.vue
+│  │     ├─ RegistForm.vue
+│  │     ├─ Sidebar.vue
+│  │     └─ TheHeaderNav.vue
+│  ├─ main.js
+│  ├─ router
+│  │  └─ index.js
+│  ├─ stores
+│  │  ├─ counter.js
+│  │  ├─ SportsStore.js
+│  │  ├─ UserStore.js
+│  │  └─ VideoStore.js
+│  ├─ utils
+│  │  ├─ authUtil.js
+│  │  ├─ kakaoUtil.js
+│  │  ├─ sportsUtil.js
+│  │  ├─ userUtil.js
+│  │  └─ videoUtil.js
+│  └─ views
+│     ├─ AboutView.vue
+│     ├─ HomeView.vue
+│     ├─ LogoutView.vue
+│     ├─ RecommendView.vue
+│     ├─ SelectView.vue
+│     └─ VideoView.vue
+└─ vite.config.js
+
+```
