@@ -24,6 +24,10 @@
 ### 운동 영상 추천 -> 딱 맞는 운동 영상을 추천해드립니다.
 
 ![영상추천](images/영상추천.png){: width="800" height="600"}
+
+### Usecase Diagram
+
+![usecaseDiagram](images/useCaseDiagram.PNG){: width="800" height="600"}
  
 ## 프론트 vue 프로젝트 구조
 ----------------------------------------------------------------------
