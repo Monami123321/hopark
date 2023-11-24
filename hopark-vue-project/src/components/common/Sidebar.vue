@@ -12,7 +12,7 @@
           <button class="btn btn-dark fs-5 my-3 mx-2" @click="store.userLogout(() => jwt = !jwt)" v-else> 로그아웃</button>
           <RouterLink class="btn btn-dark fs-5 my-3 mx-2" to="/">처음으로</RouterLink>
           <RouterLink class="btn btn-dark fs-5 my-3 mx-2" to="/regist">회원가입</RouterLink>
-          <div class="btn btn-dark fs-5 my-3 mx-2">사이트 소개</div>
+          <RouterLink class="btn btn-dark fs-5 my-3 mx-2" to="/about">사이트 소개</RouterLink>
           <div class="btn btn-dark fs-5 my-3 mx-2">고객센터</div>
         </div>
       </transition>
