@@ -6,6 +6,7 @@ import LoginForm from "@/components/common/LoginForm.vue";
 import RegistForm from "@/components/common/RegistForm.vue";
 import RecommendView from "@/views/RecommendView.vue";
 import VideoView from "@/views/VideoView.vue";
+import AboutView from "@/views/AboutView.vue";
 import { isAuthenticated, isOpenedUrl } from "@/utils/authUtil.js";
 
 const router = createRouter({
@@ -51,6 +52,11 @@ const router = createRouter({
       path: "/video",
       name: "video",
       component: VideoView,
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: AboutView,
     },
   ],
 });
