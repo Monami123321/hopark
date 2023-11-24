@@ -70,10 +70,10 @@
 └─ vite.config.js <br>
 -------------------------------------------------------------------------------
 ## 백엔드 클래스 다이어그램
-![스웨거](images/swagger.PNG){: width="1000" height="500"}
+![클래스다이어그램](images/classDiagram.png){: width="1000" height="500"}
 
 ## 백 API
-
+![스웨거](images/swagger.PNG){: width="1000" height="500"}
 
 # 특장점
 
